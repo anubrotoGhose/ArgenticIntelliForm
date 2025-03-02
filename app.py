@@ -18,14 +18,15 @@ from dotenv import load_dotenv
 GEMINI_API_KEY = None
 
 # Use secrets in deployment
-if "GEMINI_API_KEY" in st.secrets:
-    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-else:
-    # Load .env file in local development
-    if os.path.exists(".env"):
-        load_dotenv()
-        GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# Load .env file (LOCAL DEVELOPMENT)
+if os.path.exists(".env"):
+    load_dotenv()  # Load environment variables
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
+# Use Streamlit Secrets (DEPLOYMENT)
+elif "GEMINI_API_KEY" in st.secrets:
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+    
 # Ensure API key is set before configuring genai
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
