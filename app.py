@@ -13,10 +13,24 @@ import cv2
 import numpy as np
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+# Default to None
+GEMINI_API_KEY = None
+
+# Use secrets in deployment
+if "GEMINI_API_KEY" in st.secrets:
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+else:
+    # Load .env file in local development
+    if os.path.exists(".env"):
+        load_dotenv()
+        GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Ensure API key is set before configuring genai
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
+else:
+    st.error("❌ Missing API Key! Please set GEMINI_API_KEY in .env or Streamlit Secrets.")
 
 # Supported OCR languages
 OCR_LANGUAGES = {
