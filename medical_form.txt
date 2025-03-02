@@ -1,0 +1,80 @@
+Medical Intake Form
+
+Please fill out this form accurately to help us provide the best care.
+Patient Information
+
+    Full Name: John Doe
+    Date of Birth (DD/MM/YYYY): 15/06/1985
+    Gender: ☑ Male ☐ Female ☐ Other
+    Address: 123 Main Street, Springfield
+    City: Springfield State: IL Zip Code: 62704
+    Phone Number: (217) 555-1234
+    Email: johndoe@email.com
+    Emergency Contact Name: Jane Doe
+    Emergency Contact Phone: (217) 555-5678
+    Relationship to Patient: Spouse
+
+Insurance Information (If applicable)
+
+    Insurance Provider: Blue Cross Blue Shield
+    Policy Number: BCBS12345678
+    Group Number: GRP98765
+    Primary Insured Name: John Doe
+    Relationship to Patient: ☑ Self ☐ Spouse ☐ Parent ☐ Other
+
+Medical History
+
+Do you have any of the following conditions? (Check all that apply)
+☑ Diabetes
+☑ High Blood Pressure
+☐ Heart Disease
+☐ Asthma
+☐ Allergies (Specify): _______________
+☐ Kidney Disease
+☐ Thyroid Problems
+☐ Seizures
+☐ Cancer (Specify): _______________
+☐ Other (Specify): _______________
+
+Are you currently taking any medications?
+☑ Yes (List below) ☐ No
+
+    Metformin (for Diabetes)
+    Lisinopril (for High Blood Pressure)
+
+Do you have any past surgeries or hospitalizations?
+☑ Yes (List below) ☐ No
+
+    Appendectomy (2015)
+
+Lifestyle & Habits
+
+    Do you smoke? ☐ Yes ☑ No
+    Do you consume alcohol? ☑ Yes ☐ No
+    Do you exercise regularly? ☑ Yes ☐ No
+    Do you follow any special diet? ☑ Yes ☐ No (Specify): Low-carb diet
+
+Symptoms & Current Concerns
+
+Reason for today's visit:
+☐ General Checkup
+☐ Injury
+☑ Illness
+☐ Other (Specify): _______________
+
+Current Symptoms (if any):
+☑ Fever
+☑ Cough
+☑ Shortness of Breath
+☐ Chest Pain
+☐ Nausea
+☐ Other (Specify): _______________
+Consent & Signature
+
+I confirm that the information provided is accurate to the best of my knowledge.
+
+Patient Signature: John Doe
+Date: 02/03/2025
+
+Guardian Signature (if patient is a minor): N/A
+Date: N/A

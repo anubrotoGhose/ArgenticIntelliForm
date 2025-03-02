@@ -1,0 +1,11 @@
+Use Case 1: 
+Parsing Information from Structured Forms The system must extract data from structured forms, including PDFs, Word documents, and scanned copies, without requiring pre-training for each new form. 
+The solution must support form processing for multi-lingual handwritten text and scanned documents with minor orientation shifts. 
+The system must automatically map extracted fields to corresponding fields in the enterprise application without manual intervention. 
+If an automatic mapping is not possible, the system must provide an interactive console for business admins to manually define mappings by selecting form fields and linking them to enterprise application fields. 
+The solution must include a user-friendly, no-code interface for business admins to configure and fine-tune form parsing without requiring technical expertise. 
+This is expected to a be UI based capability. 
+In addition – we are also looking at possibility to add custom logics using NLP e.g., if data received in form is a Data of Birth 01-Jan-1980, then should be able to auto-calculate the Age. 
+The system must support real-time form processing with minimal latency and high accuracy. 
+The solution must handle variations (same field appearing in section 1 vs section 2 in a different form) in form layouts dynamically without requiring explicit training for each new layout. 
+Performance requirements are to be determined but the expectation is for identified forms the system should be able to extract information & populate to the application is less than 10 secs. 
