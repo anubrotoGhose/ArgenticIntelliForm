@@ -79,9 +79,16 @@ selected_language = st.sidebar.selectbox(
 
 # Image Preprocessing
 def preprocess_image(image):
-    gray = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2GRAY)
-    _, thresh = cv2.threshold(gray, 128, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-    return Image.fromarray(thresh)
+    image_array = np.array(image)
+
+    # If image has 3 channels (RGB), convert to grayscale
+    if len(image_array.shape) == 3 and image_array.shape[2] == 3:
+        gray = cv2.cvtColor(image_array, cv2.COLOR_RGB2GRAY)
+    else:
+        gray = image_array  # Already grayscale
+
+    # Continue with other preprocessing...
+    return gray
 
 # OCR Extraction
 def extract_text_from_image(image_file, lang_code):
@@ -229,6 +236,23 @@ def extract_json_from_text(text):
     match = re.search(r"\{.*\}", text, re.DOTALL)
     return match.group(0) if match else None
 
+def calculate_age(dob_str):
+    try:
+        # Try common formats
+        for fmt in ("%Y-%m-%d", "%d-%m-%Y", "%d/%m/%Y", "%B %d, %Y"):
+            try:
+                dob = datetime.strptime(dob_str, fmt)
+                break
+            except ValueError:
+                continue
+        else:
+            raise ValueError("Unknown date format")
+        
+        today = datetime.today()
+        return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+    except Exception as e:
+        print(f"[calculate_age] Error: {e}")
+        return None
 
 def auto_map_text(text):
     prompt = f"""
